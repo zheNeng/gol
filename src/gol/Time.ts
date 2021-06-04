@@ -3,7 +3,7 @@ const timeList: Time[] = []
 
 export class Time {
   static count: number = 0
-  color: string
+  color: string // 为了区分不同的时间控制,模拟黑域/时间倒流
 
   static removeOtherTime: (item: Cell) => void = (cell: Cell,) => {
     timeList.forEach(item => {
@@ -18,7 +18,7 @@ export class Time {
 
   public count: number
 
-  constructor(cellList: Cell[] = [], color = 'black') {
+  constructor(cellList: Cell[] = [], color = '#6f6b6b') {
     (window as any).time = this
     cellList.forEach(cell => {
       Time.removeOtherTime(cell)
